@@ -12,6 +12,7 @@ import {
   Imagem
 } from './styles'
 import estrela from '../../assets/images/estrela.svg'
+import { Link } from 'react-router-dom'
 
 type Props = {
   titulo: string
@@ -32,7 +33,7 @@ const Product = ({
 }: Props) => (
   <Card>
     <Imagem src={imagem} alt={titulo} />
-    <Destaque>{destaque}</Destaque>
+    <Destaque>Destaque da semana</Destaque>
     <Origem>{origem}</Origem>
     <Infos>
       <InfoPrincipal>
@@ -41,7 +42,9 @@ const Product = ({
         <Estrela src={estrela} />
       </InfoPrincipal>
       <Descricao>{descricao}</Descricao>
-      <Button>Saiba mais</Button>
+      <Link to="/perfil">
+        <Button>Saiba mais</Button>
+      </Link>
     </Infos>
   </Card>
 )

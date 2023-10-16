@@ -51,6 +51,7 @@ export const Titulo = styled.h2`
   font-weight: 700;
   margin-left: 7px;
 `
+
 export const Nota = styled.span`
   margin-top: 8px;
   position: absolute;
@@ -58,11 +59,13 @@ export const Nota = styled.span`
   font-size: 18px;
   font-weight: 700;
 `
+
 export const Estrela = styled.img`
   margin-top: 8px;
   position: absolute;
   right: 8px;
 `
+
 export const Descricao = styled.p`
   display: block;
   font-size: 14px;
@@ -70,6 +73,7 @@ export const Descricao = styled.p`
   line-height: 22px;
   margin: 16px 8px;
 `
+
 export const Button = styled.button`
   padding: 4px 6px;
   background-color: ${cores.rosa};
@@ -77,5 +81,7 @@ export const Button = styled.button`
   font-size: 14px;
   font-weight: 700;
   border: none;
-  margin: 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
 `
