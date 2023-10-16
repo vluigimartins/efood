@@ -2,7 +2,6 @@ import {
   Banner,
   Carrinho,
   Container,
-  Header,
   Titulo,
   TituloBanner,
   TituloPerfil,
@@ -15,16 +14,14 @@ import { Link } from 'react-router-dom'
 
 const Header_Perfil = () => (
   <>
-    <Header>
-      <Vetor src={vetor} alt="vetor" />
-      <Container>
-        <Titulo>Restaurantes</Titulo>
-        <Link to="/">
-          <img src={logo} alt="efood" />
-        </Link>
-        <Carrinho>0 produto(s) no carrinho</Carrinho>
-      </Container>
-    </Header>
+    <Vetor src={vetor} alt="vetor" />
+    <Container>
+      <Titulo>Restaurantes</Titulo>
+      <Link to="/">
+        <img src={logo} alt="efood" />
+      </Link>
+      <Carrinho>0 produto(s) no carrinho</Carrinho>
+    </Container>
     <Banner>
       <img src={banner} alt="Macarrao" />
     </Banner>

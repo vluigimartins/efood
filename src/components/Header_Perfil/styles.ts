@@ -1,25 +1,23 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
-export const Header = styled.header`
-  text-align: center;
-`
-
 export const Vetor = styled.img`
   height: 186px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 `
 
 export const Container = styled.div`
   position: absolute;
+  width: 100%;
   top: 63px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
   left: 60px;
+  overflow-x: hidden;
 `
 
 export const Titulo = styled.h2`
@@ -30,9 +28,8 @@ export const Titulo = styled.h2`
 export const Carrinho = styled.h2`
   font-size: 18px;
   font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  right: 40px;
+  overflow-x: hidden;
 `
 
 export const Banner = styled.div`
@@ -42,6 +39,7 @@ export const Banner = styled.div`
   img {
     height: 280px;
     width: 100%;
+    overflow: hidden;
   }
 `
 
@@ -56,7 +54,7 @@ export const TituloBanner = styled.h1`
 
 export const TituloPerfil = styled.h1`
   position: absolute;
-  z-index: 1;
+
   top: 399.75px;
   margin-left: 170px;
   color: ${cores.branco};

@@ -19,6 +19,7 @@ export const GlobalCss = createGlobalStyle`
   body {
     background-color: ${cores.bejeClaro};
     color: ${cores.rosa};
+    overflow-x: hidden;
   }
 
   .container {
