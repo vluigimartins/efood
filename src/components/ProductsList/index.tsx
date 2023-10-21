@@ -1,6 +1,6 @@
+import { Dish } from '../../pages/Home'
 import Product from '../Product'
 import { Container, List } from './styles'
-import Dish from '../../models/Dishes'
 
 export type Props = {
   dishes: Dish[]
@@ -13,12 +13,13 @@ const ProductsList = ({ dishes }: Props) => (
         {dishes.map((dish) => (
           <Product
             key={dish.id}
-            titulo={dish.title}
-            nota={dish.note}
-            destaque={dish.highlight}
-            origem={dish.origin}
-            imagem={dish.image}
-            descricao={dish.description}
+            titulo={dish.titulo}
+            nota={dish.avaliacao}
+            destaque={dish.destacado}
+            origem={dish.tipo}
+            imagem={dish.capa}
+            descricao={dish.descricao}
+            id={dish.id}
           />
         ))}
       </List>

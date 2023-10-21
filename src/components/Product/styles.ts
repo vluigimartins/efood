@@ -9,7 +9,11 @@ export const Card = styled.div`
 
 export const Imagem = styled.img`
   margin-bottom: -5px;
+  max-width: 100%;
+  width: 472px;
+  height: 217px;
 `
+
 export const Destaque = styled.div`
   background-color: ${cores.rosa};
   color: ${cores.beje};
@@ -37,6 +41,7 @@ export const Infos = styled.div`
   border-right: 1px solid ${cores.rosa};
   border-bottom: 1px solid ${cores.rosa};
   border-left: 1px solid ${cores.rosa};
+  width: 100%;
 `
 
 export const InfoPrincipal = styled.ul`
@@ -72,6 +77,7 @@ export const Descricao = styled.p`
   font-weight: 400;
   line-height: 22px;
   margin: 16px 8px;
+  min-height: 110px;
 `
 
 export const Button = styled.button`

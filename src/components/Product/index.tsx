@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
   Card,
   Descricao,
@@ -12,9 +13,9 @@ import {
   Imagem
 } from './styles'
 import estrela from '../../assets/images/estrela.svg'
-import { Link } from 'react-router-dom'
 
 type Props = {
+  id: number
   titulo: string
   nota: string
   destaque: boolean
@@ -24,29 +25,32 @@ type Props = {
 }
 
 const Product = ({
+  id,
   titulo,
   nota,
   destaque,
   origem,
   imagem,
   descricao
-}: Props) => (
-  <Card>
-    <Imagem src={imagem} alt={titulo} />
-    <Destaque>Destaque da semana</Destaque>
-    <Origem>{origem}</Origem>
-    <Infos>
-      <InfoPrincipal>
-        <Titulo>{titulo}</Titulo>
-        <Nota>{nota}</Nota>
-        <Estrela src={estrela} />
-      </InfoPrincipal>
-      <Descricao>{descricao}</Descricao>
-      <Link to="/perfil">
-        <Button>Saiba mais</Button>
-      </Link>
-    </Infos>
-  </Card>
-)
+}: Props) => {
+  return (
+    <Card>
+      <Imagem src={imagem} alt={titulo} />
+      {destaque === true && <Destaque>Destaque da semana</Destaque>}
+      <Origem>{origem}</Origem>
+      <Infos>
+        <InfoPrincipal>
+          <Titulo>{titulo}</Titulo>
+          <Nota>{nota}</Nota>
+          <Estrela src={estrela} />
+        </InfoPrincipal>
+        <Descricao>{descricao}</Descricao>
+        <Link to={`/perfil/${id}`}>
+          <Button>Saiba mais</Button>
+        </Link>
+      </Infos>
+    </Card>
+  )
+}
 
 export default Product

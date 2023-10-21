@@ -1,33 +1,26 @@
-import {
-  Banner,
-  Carrinho,
-  Container,
-  Titulo,
-  TituloBanner,
-  TituloPerfil,
-  Vetor
-} from './styles'
+import { Link } from 'react-router-dom'
+import { Carrinho, Container, Titulo, Vetor } from './styles'
 import logo from '../../assets/images/logo.svg'
 import vetor from '../../assets/images/Vector_Perfil.png'
-import banner from '../../assets/images/macarrao_banner.png'
-import { Link } from 'react-router-dom'
+import { Order } from '../../pages/Perfil'
 
-const Header_Perfil = () => (
-  <>
-    <Vetor src={vetor} alt="vetor" />
-    <Container>
-      <Titulo>Restaurantes</Titulo>
-      <Link to="/">
-        <img src={logo} alt="efood" />
-      </Link>
-      <Carrinho>0 produto(s) no carrinho</Carrinho>
-    </Container>
-    <Banner>
-      <img src={banner} alt="Macarrao" />
-    </Banner>
-    <TituloBanner>Italiana</TituloBanner>
-    <TituloPerfil>La Dolce Vita Trattoria</TituloPerfil>
-  </>
-)
+export type Props = {
+  orders: Order[]
+}
+
+const Header_Perfil = () => {
+  return (
+    <>
+      <Vetor src={vetor} alt="vetor" />
+      <Container>
+        <Titulo>Restaurantes</Titulo>
+        <Link to="/">
+          <img src={logo} alt="efood" />
+        </Link>
+        <Carrinho>0 produto(s) no carrinho</Carrinho>
+      </Container>
+    </>
+  )
+}
 
 export default Header_Perfil
