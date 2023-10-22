@@ -12,9 +12,9 @@ import {
 import close from '../../assets/images/close.png'
 
 type Props = {
-  title: string
-  description: string
-  image: string
+  titulo: string
+  descricao: string
+  imagem: string
   preco: number
   porcao: string
 }
@@ -27,9 +27,9 @@ export const formataPreco = (preco = 0) => {
 }
 
 const Product_Perfil = ({
-  title,
-  description,
-  image,
+  titulo,
+  descricao,
+  imagem,
   preco,
   porcao
 }: Props) => {
@@ -38,27 +38,27 @@ const Product_Perfil = ({
     <>
       <Card>
         <Imagem
-          src={image}
-          alt={title}
+          src={imagem}
+          alt={titulo}
           onClick={() => setModalEstaAberto(true)}
         />
 
-        <Titulo>{title}</Titulo>
-        <Descricao>{description}</Descricao>
+        <Titulo>{titulo}</Titulo>
+        <Descricao>{descricao}</Descricao>
         <Button>Adicionar ao carrinho</Button>
       </Card>
       <Modal className={mmodalEstaAberto ? 'visble' : ''}>
         <ModalContent className="container">
-          <img src={image} alt={title} />
+          <img src={imagem} alt={titulo} />
           <div className="details">
             <img
               src={close}
               alt="botão fechar"
               onClick={() => setModalEstaAberto(false)}
             />
-            <h1>{title}</h1>
+            <h1>{titulo}</h1>
             <p>
-              {description} <br />
+              {descricao} <br />
               <br /> Serve: {porcao.length !== 8 ? `de ${porcao}` : porcao}
             </p>
             <Button2>Adicionar ao carrinho - {formataPreco(preco)}</Button2>

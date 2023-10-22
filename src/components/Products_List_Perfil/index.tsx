@@ -1,28 +1,22 @@
-import { Order } from '../../pages/Perfil'
 import Product_Perfil from '../Product_Perfil'
-import { Banner, Container, List, TituloBanner, TituloPerfil } from './styles'
-import banner from '../../assets/images/macarrao_banner.png'
+import { Container, List } from './styles'
+import { Order } from '../../pages/Perfil'
 
 export type Props = {
   orders: Order[]
 }
 
-const Products_List_Perfil = ({ orders }: Props) => (
-  <>
-    <Banner>
-      <img src={banner} alt="Macarrao" />
-    </Banner>
-    <TituloBanner>titulo</TituloBanner>
-    <TituloPerfil>La Dolce Vita Trattoria</TituloPerfil>
+const Products_List_Perfil = ({ orders }: Props) => {
+  return (
     <div className="container">
       <Container>
         <List>
           {orders.map((order) => (
             <Product_Perfil
               key={order.id}
-              description={order.descricao}
-              image={order.foto}
-              title={order.nome}
+              descricao={order.descricao}
+              imagem={order.foto}
+              titulo={order.nome}
               preco={order.preco}
               porcao={order.porcao}
             />
@@ -30,7 +24,7 @@ const Products_List_Perfil = ({ orders }: Props) => (
         </List>
       </Container>
     </div>
-  </>
-)
+  )
+}
 
 export default Products_List_Perfil

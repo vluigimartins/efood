@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Products_List_Perfil from '../../components/Products_List_Perfil'
 import Header_Perfil from '../../components/Header_Perfil'
+import HeroPerfil from '../../components/Hero_Perfil/indesx'
 
 export type Order = {
-  capa: string
   tipo: string
   titulo: string
   foto: string
@@ -25,9 +25,14 @@ const Perfil = () => {
       .then((res) => setOrderTypes(res.cardapio))
   }, [id])
 
+  if (!orderTypes) {
+    return <h3>Carregando...</h3>
+  }
+
   return (
     <>
       <Header_Perfil />
+      <HeroPerfil />
       <Products_List_Perfil orders={orderTypes} />
     </>
   )

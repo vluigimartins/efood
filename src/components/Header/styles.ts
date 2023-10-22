@@ -19,5 +19,7 @@ export const Titulo = styled.h1`
   margin-top: 236px;
   font-size: 36px;
   font-weight: 900;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
