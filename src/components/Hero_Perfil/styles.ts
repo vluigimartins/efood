@@ -6,7 +6,6 @@ export const Banner = styled.div`
   margin: -4px;
   img {
     height: 280px;
-
     width: 100%;
     overflow: hidden;
   }

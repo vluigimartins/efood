@@ -5,8 +5,6 @@ import Header_Perfil from '../../components/Header_Perfil'
 import HeroPerfil from '../../components/Hero_Perfil/indesx'
 
 export type Order = {
-  tipo: string
-  titulo: string
   foto: string
   preco: number
   id: number

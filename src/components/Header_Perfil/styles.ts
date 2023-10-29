@@ -29,4 +29,5 @@ export const Carrinho = styled.h2`
   font-weight: 900;
   right: 40px;
   overflow-x: hidden;
+  cursor: pointer;
 `

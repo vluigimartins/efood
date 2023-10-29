@@ -15,10 +15,11 @@ const Products_List_Perfil = ({ orders }: Props) => {
             <Product_Perfil
               key={order.id}
               descricao={order.descricao}
-              imagem={order.foto}
-              titulo={order.nome}
+              foto={order.foto}
+              nome={order.nome}
               preco={order.preco}
               porcao={order.porcao}
+              id={order.id}
             />
           ))}
         </List>

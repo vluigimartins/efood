@@ -10,12 +10,15 @@ import {
   Titulo
 } from './styles'
 import close from '../../assets/images/close.png'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
-  titulo: string
-  descricao: string
-  imagem: string
+  nome: string
+  foto: string
   preco: number
+  id: number
+  descricao: string
   porcao: string
 }
 
@@ -27,41 +30,58 @@ export const formataPreco = (preco = 0) => {
 }
 
 const Product_Perfil = ({
-  titulo,
   descricao,
-  imagem,
+  foto,
   preco,
-  porcao
+  porcao,
+  id,
+  nome
 }: Props) => {
   const [mmodalEstaAberto, setModalEstaAberto] = useState(false)
+
+  const dispatch = useDispatch()
+  const addToCart = () => {
+    const pedido = {
+      foto,
+      preco,
+      id,
+      descricao,
+      porcao,
+      nome
+    }
+    dispatch(add(pedido))
+    dispatch(open())
+  }
   return (
     <>
       <Card>
         <Imagem
-          src={imagem}
-          alt={titulo}
+          src={foto}
+          alt={nome}
           onClick={() => setModalEstaAberto(true)}
         />
 
-        <Titulo>{titulo}</Titulo>
+        <Titulo>{nome}</Titulo>
         <Descricao>{descricao}</Descricao>
-        <Button>Adicionar ao carrinho</Button>
+        <Button onClick={addToCart}>Adicionar ao carrinho</Button>
       </Card>
       <Modal className={mmodalEstaAberto ? 'visble' : ''}>
         <ModalContent className="container">
-          <img src={imagem} alt={titulo} />
+          <img src={foto} alt={nome} />
           <div className="details">
             <img
               src={close}
               alt="botão fechar"
               onClick={() => setModalEstaAberto(false)}
             />
-            <h1>{titulo}</h1>
+            <h1>{nome}</h1>
             <p>
               {descricao} <br />
               <br /> Serve: {porcao.length !== 8 ? `de ${porcao}` : porcao}
             </p>
-            <Button2>Adicionar ao carrinho - {formataPreco(preco)}</Button2>
+            <Button2 onClick={addToCart}>
+              Adicionar ao carrinho - {formataPreco(preco)}
+            </Button2>
           </div>
         </ModalContent>
         <div
