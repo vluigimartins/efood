@@ -29,6 +29,7 @@ export const SideBar = styled.aside`
   background-color: ${cores.rosa};
   z-index: 1;
   padding-top: 32px;
+  width: 360px;
 `
 export const CartCard = styled.div`
   background-color: ${cores.beje};

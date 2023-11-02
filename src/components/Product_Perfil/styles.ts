@@ -9,12 +9,6 @@ export const Card = styled.div`
 
   img {
     opacity: 1;
-
-    &:hover {
-      opacity: 0.75;
-      transition: opacity 0.5s ease;
-      cursor: pointer;
-    }
   }
 `
 

@@ -16,7 +16,7 @@ export const Container = styled.div`
 `
 
 export const Titulo = styled.h1`
-  margin-top: 236px;
+  margin-top: 139px;
   font-size: 36px;
   font-weight: 900;
   display: flex;

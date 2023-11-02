@@ -6,23 +6,25 @@ import twitter from '../../assets/images/twitter-2-svgrepo-com 1.svg'
 
 const Footer = () => (
   <FooterSection>
-    <img src={logo} alt="efood" />
-    <RedeSocial>
-      <li>
-        <img src={instagram} alt="Logo instagram" />
-      </li>
-      <LogoFace>
-        <img src={facebook} alt="Logo facebook" />
-      </LogoFace>
-      <li>
-        <img src={twitter} alt="Logo twitter" />
-      </li>
-    </RedeSocial>
-    <p>
-      A efood é uma plataforma para divulgação de estabelecimentos, a
-      responsabilidade pela entrega, qualidade
-      <br /> dos produtos é toda do estabelecimento contratado.{' '}
-    </p>
+    <div className="container">
+      <img src={logo} alt="efood" />
+      <RedeSocial>
+        <li>
+          <img src={instagram} alt="Logo instagram" />
+        </li>
+        <LogoFace>
+          <img src={facebook} alt="Logo facebook" />
+        </LogoFace>
+        <li>
+          <img src={twitter} alt="Logo twitter" />
+        </li>
+      </RedeSocial>
+      <p>
+        A efood é uma plataforma para divulgação de estabelecimentos, a
+        responsabilidade pela entrega, qualidade
+        <br /> dos produtos é toda do estabelecimento contratado.{' '}
+      </p>
+    </div>
   </FooterSection>
 )
 export default Footer

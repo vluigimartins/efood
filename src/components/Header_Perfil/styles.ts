@@ -10,24 +10,26 @@ export const Vetor = styled.img`
 
 export const Container = styled.div`
   position: absolute;
-  width: 100%;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+  width: 1024px;
   top: 63px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  left: 60px;
-  overflow-x: hidden;
 `
 
 export const Titulo = styled.h2`
   font-size: 18px;
   font-weight: 900;
+  margin-right: 341px;
 `
 
 export const Carrinho = styled.h2`
+  position: absolute;
+  right: 0;
   font-size: 18px;
   font-weight: 900;
-  right: 40px;
   overflow-x: hidden;
   cursor: pointer;
 `

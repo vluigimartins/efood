@@ -55,15 +55,13 @@ const Product_Perfil = ({
   return (
     <>
       <Card>
-        <Imagem
-          src={foto}
-          alt={nome}
-          onClick={() => setModalEstaAberto(true)}
-        />
+        <Imagem src={foto} alt={nome} />
 
         <Titulo>{nome}</Titulo>
         <Descricao>{descricao}</Descricao>
-        <Button onClick={addToCart}>Adicionar ao carrinho</Button>
+        <Button onClick={() => setModalEstaAberto(true)}>
+          Adicionar ao carrinho
+        </Button>
       </Card>
       <Modal className={mmodalEstaAberto ? 'visble' : ''}>
         <ModalContent className="container">

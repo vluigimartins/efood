@@ -11,20 +11,18 @@ export const Banner = styled.div`
   }
 `
 
-export const TituloBanner = styled.h1`
+export const TituloBanner = styled.h2`
   position: absolute;
   top: 210px;
-  margin-left: 170px;
   color: ${cores.branco};
   font-size: 32px;
   font-weight: 100;
 `
 
-export const TituloPerfil = styled.h1`
+export const TituloPerfil = styled.h2`
   position: absolute;
 
   top: 399.75px;
-  margin-left: 170px;
   color: ${cores.branco};
   font-size: 32px;
   font-weight: 900;

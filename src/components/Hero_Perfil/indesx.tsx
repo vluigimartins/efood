@@ -22,8 +22,12 @@ const HeroPerfil = () => {
       <Banner>
         <img src={restaurantes.capa} />
       </Banner>
-      <TituloBanner>{restaurantes.tipo}</TituloBanner>
-      <TituloPerfil>{restaurantes.titulo}</TituloPerfil>
+      <div className="container">
+        <TituloBanner className="containerBanner">
+          {restaurantes.tipo}
+        </TituloBanner>
+        <TituloPerfil>{restaurantes.titulo}</TituloPerfil>
+      </div>
     </>
   )
 }
