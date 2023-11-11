@@ -1,4 +1,5 @@
-import { FooterSection, LogoFace, RedeSocial } from './styles'
+import { FooterSection, LogoFace, Social } from './styles'
+
 import logo from '../../assets/images/logo.svg'
 import instagram from '../../assets/images/instagram-round-svgrepo-com (1) 1.svg'
 import facebook from '../../assets/images/facebook-round-svgrepo-com 1.svg'
@@ -8,7 +9,7 @@ const Footer = () => (
   <FooterSection>
     <div className="container">
       <img src={logo} alt="efood" />
-      <RedeSocial>
+      <Social>
         <li>
           <img src={instagram} alt="Logo instagram" />
         </li>
@@ -18,7 +19,7 @@ const Footer = () => (
         <li>
           <img src={twitter} alt="Logo twitter" />
         </li>
-      </RedeSocial>
+      </Social>
       <p>
         A efood é uma plataforma para divulgação de estabelecimentos, a
         responsabilidade pela entrega, qualidade

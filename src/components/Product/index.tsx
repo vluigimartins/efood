@@ -1,55 +1,43 @@
 import { Link } from 'react-router-dom'
-import {
-  Card,
-  Descricao,
-  Destaque,
-  Nota,
-  Origem,
-  Titulo,
-  Infos,
-  Estrela,
-  Button,
-  InfoPrincipal,
-  Imagem
-} from './styles'
-import estrela from '../../assets/images/estrela.svg'
+import * as S from './styles'
+import star from '../../assets/images/estrela.svg'
 
 type Props = {
   id: number
-  titulo: string
-  nota: string
-  destaque: boolean
-  origem: string
-  imagem: string
-  descricao: string
+  title: string
+  rating: string
+  highlight: boolean
+  origin: string
+  image: string
+  description: string
 }
 
 const Product = ({
   id,
-  titulo,
-  nota,
-  destaque,
-  origem,
-  imagem,
-  descricao
+  title,
+  rating,
+  highlight,
+  origin,
+  image,
+  description
 }: Props) => {
   return (
-    <Card>
-      <Imagem src={imagem} alt={titulo} />
-      {destaque === true && <Destaque>Destaque da semana</Destaque>}
-      <Origem>{origem}</Origem>
-      <Infos>
-        <InfoPrincipal>
-          <Titulo>{titulo}</Titulo>
-          <Nota>{nota}</Nota>
-          <Estrela src={estrela} />
-        </InfoPrincipal>
-        <Descricao>{descricao}</Descricao>
+    <S.Card>
+      <S.Image src={image} alt={title} />
+      {highlight === true && <S.Highlight>Destaque da semana</S.Highlight>}
+      <S.Origin>{origin}</S.Origin>
+      <S.Infos>
+        <S.MainInfo>
+          <S.Title>{title}</S.Title>
+          <S.Rating>{rating}</S.Rating>
+          <S.Star src={star} />
+        </S.MainInfo>
+        <S.Description>{description}</S.Description>
         <Link to={`/perfil/${id}`}>
-          <Button>Saiba mais</Button>
+          <S.Button>Saiba mais</S.Button>
         </Link>
-      </Infos>
-    </Card>
+      </S.Infos>
+    </S.Card>
   )
 }
 

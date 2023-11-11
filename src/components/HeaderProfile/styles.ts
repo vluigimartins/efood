@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Vetor = styled.img`
+export const Vector = styled.img`
   height: 186px;
   width: 100%;
   background-repeat: no-repeat;
@@ -19,13 +19,13 @@ export const Container = styled.div`
   align-items: center;
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 18px;
   font-weight: 900;
   margin-right: 341px;
 `
 
-export const Carrinho = styled.h2`
+export const Cart = styled.h2`
   position: absolute;
   right: 0;
   font-size: 18px;

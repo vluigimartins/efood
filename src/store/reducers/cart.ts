@@ -1,14 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Order } from '../../pages/Perfil'
+
+import { Order } from '../../pages/Profile'
 
 type CartState = {
   items: Order[]
   isOpen: boolean
+  showDelivery: boolean
+  showPayment: boolean
 }
 
 const initialState: CartState = {
   items: [],
-  isOpen: false
+  isOpen: false,
+  showDelivery: false,
+  showPayment: false
 }
 
 const cartSlice = createSlice({
@@ -16,9 +21,9 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Order>) => {
-      const pedido = state.items.find((items) => items.id === action.payload.id)
+      const order = state.items.find((items) => items.id === action.payload.id)
 
-      if (!pedido) {
+      if (!order) {
         state.items.push(action.payload)
       } else {
         alert('O prato já está no carrinho')
@@ -32,9 +37,20 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+      state.showDelivery = false
+      state.showPayment = false
+    },
+    setShowDelivery: (state, action: PayloadAction<boolean>) => {
+      state.showDelivery = action.payload
+      state.showPayment = false
+    },
+    setShowPayment: (state, action: PayloadAction<boolean>) => {
+      state.showPayment = action.payload
+      state.showDelivery = false
     }
   }
 })
 
-export const { add, remove, open, close } = cartSlice.actions
+export const { add, remove, open, close, setShowDelivery, setShowPayment } =
+  cartSlice.actions
 export default cartSlice.reducer

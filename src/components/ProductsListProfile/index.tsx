@@ -1,12 +1,14 @@
-import Product_Perfil from '../Product_Perfil'
 import { Container, List } from './styles'
-import { Order } from '../../pages/Perfil'
+
+import Product_Perfil from '../ProductProfile'
+
+import { Order } from '../../pages/Profile'
 
 export type Props = {
   orders: Order[]
 }
 
-const Products_List_Perfil = ({ orders }: Props) => {
+const ProductsListProfile = ({ orders }: Props) => {
   return (
     <div className="container">
       <Container>
@@ -28,4 +30,4 @@ const Products_List_Perfil = ({ orders }: Props) => {
   )
 }
 
-export default Products_List_Perfil
+export default ProductsListProfile

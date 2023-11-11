@@ -1,22 +1,23 @@
 import { Link } from 'react-router-dom'
 
-import { Container, Hero, Titulo, Vetor } from './styles'
+import * as S from './styles'
+
 import logo from '../../assets/images/logo.svg'
-import vetor from '../../assets/images/Vector_Home.png'
+import vector from '../../assets/images/Vector_Home.png'
 
 const Header = () => (
-  <Hero>
-    <Vetor src={vetor} alt="vetor" />
-    <Container>
+  <S.Hero>
+    <S.Vetor src={vector} alt="vetor" />
+    <S.Container>
       <Link to="/">
         <img src={logo} alt="efood" />
       </Link>
-      <Titulo>
+      <S.Title>
         Viva experiências gastronômicas
         <br /> no conforto da sua casa
-      </Titulo>
-    </Container>
-  </Hero>
+      </S.Title>
+    </S.Container>
+  </S.Hero>
 )
 
 export default Header

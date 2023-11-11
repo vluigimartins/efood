@@ -1,23 +1,20 @@
-import {
-  CartCard,
-  CartContainer,
-  Overlay,
-  SideBar,
-  Image,
-  ValorTotal,
-  Button,
-  Lixeira
-} from './styles'
-
-import lixeira from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store/indesx'
-
-import { close, remove } from '../../store/reducers/cart'
-import { formataPreco } from '../Product_Perfil'
+import * as S from './styles'
+import { RootReducer } from '../../store'
+import recycle from '../../assets/images/lixeira-de-reciclagem 1.png'
+import {
+  close,
+  remove,
+  setShowDelivery,
+  setShowPayment
+} from '../../store/reducers/cart'
+import { FormatPrice } from '../ProductProfile'
+import Delivery from '../Delivery'
 
 const Cart = () => {
-  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items, showDelivery, showPayment } = useSelector(
+    (state: RootReducer) => state.cart
+  )
 
   const dispatch = useDispatch()
 
@@ -25,36 +22,68 @@ const Cart = () => {
     dispatch(close())
   }
 
+  const handleDeliveryClick = () => {
+    console.log("Botão 'Continuar com a entrega' clicado")
+    dispatch(setShowDelivery(true))
+    dispatch(setShowPayment(false))
+  }
+
+  const handlePaymentClick = () => {
+    dispatch(setShowPayment(true))
+    dispatch(setShowDelivery(false))
+  }
+
   const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
+    return items.reduce((accumulator, currentValue) => {
+      return (accumulator += currentValue.preco!)
     }, 0)
   }
 
   const removeItem = (id: number) => {
     dispatch(remove(id))
   }
+
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
-      <SideBar>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
+      <S.Overlay onClick={closeCart} />
+      <S.SideBar>
         {items.map((item) => (
-          <CartCard key={item.id}>
-            <Image src={item.foto} alt={item.nome} />
+          <S.CartCard key={item.id}>
+            <S.Image src={item.foto} alt={item.nome} />
             <div className="containerCart">
               <h3>{item.nome}</h3>
-              <p>{formataPreco(item.preco)}</p>
+              <p>{FormatPrice(item.preco)}</p>
             </div>
-            <Lixeira src={lixeira} onClick={() => removeItem(item.id)} />
-          </CartCard>
+            <S.Recycle src={recycle} onClick={() => removeItem(item.id)} />
+          </S.CartCard>
         ))}
-        <ValorTotal>
+        <S.CurrentValue>
           <p>Valor total</p>
-          <p>{formataPreco(getTotalPrice())}</p>
-        </ValorTotal>
-        <Button>Continuar com a entrega</Button>
-      </SideBar>
-    </CartContainer>
+          <p>{FormatPrice(getTotalPrice())}</p>
+        </S.CurrentValue>
+        {showDelivery ? (
+          <>
+            <S.Button onClick={() => dispatch(setShowDelivery(false))}>
+              Voltar para a entrega
+            </S.Button>
+          </>
+        ) : showPayment ? (
+          <S.Button onClick={() => dispatch(setShowPayment(false))}>
+            Voltar para a área de pagamento
+          </S.Button>
+        ) : (
+          <>
+            <S.Button onClick={handleDeliveryClick}>
+              Continuar com a entrega
+            </S.Button>
+          </>
+        )}
+
+        {showDelivery && (
+          <S.Button onClick={handlePaymentClick}>Ir para pagamento</S.Button>
+        )}
+      </S.SideBar>
+    </S.CartContainer>
   )
 }
 

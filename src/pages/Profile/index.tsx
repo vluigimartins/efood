@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Products_List_Perfil from '../../components/Products_List_Perfil'
-import Header_Perfil from '../../components/Header_Perfil'
-import HeroPerfil from '../../components/Hero_Perfil/indesx'
+
+import ProductsListProfile from '../../components/ProductsListProfile'
+import HeaderProfile from '../../components/HeaderProfile'
+import HeroProfile from '../../components/HeroProfile/indesx'
 
 export type Order = {
   foto: string
@@ -13,7 +14,7 @@ export type Order = {
   porcao: string
 }
 
-const Perfil = () => {
+const Profile = () => {
   const { id } = useParams()
   const [orderTypes, setOrderTypes] = useState<Order[]>([])
 
@@ -29,11 +30,11 @@ const Perfil = () => {
 
   return (
     <>
-      <Header_Perfil />
-      <HeroPerfil />
-      <Products_List_Perfil orders={orderTypes} />
+      <HeaderProfile />
+      <HeroProfile />
+      <ProductsListProfile orders={orderTypes} />
     </>
   )
 }
 
-export default Perfil
+export default Profile

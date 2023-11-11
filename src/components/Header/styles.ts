@@ -15,7 +15,7 @@ export const Container = styled.div`
   width: 100%;
 `
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   margin-top: 139px;
   font-size: 36px;
   font-weight: 900;

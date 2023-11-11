@@ -1,22 +1,22 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branco};
+  background-color: ${colors.white};
   position: relative;
   margin-bottom: 48px;
 `
 
-export const Imagem = styled.img`
+export const Image = styled.img`
   margin-bottom: -5px;
   max-width: 100%;
   width: 472px;
   height: 217px;
 `
 
-export const Destaque = styled.div`
-  background-color: ${cores.rosa};
-  color: ${cores.beje};
+export const Highlight = styled.div`
+  background-color: ${colors.pink};
+  color: ${colors.beige};
   padding: 6px 4px;
   position: absolute;
   top: 16px;
@@ -24,12 +24,13 @@ export const Destaque = styled.div`
   font-size: 12px;
   font-weight: 700;
 `
-export const Origem = styled.div`
+
+export const Origin = styled.div`
   font-size: 12px;
   font-weight: 700;
   width: 61px;
-  background-color: ${cores.rosa};
-  color: ${cores.beje};
+  background-color: ${colors.pink};
+  color: ${colors.beige};
   padding: 6px 4px;
   margin-left: 8px;
   position: absolute;
@@ -37,27 +38,28 @@ export const Origem = styled.div`
   right: 16px;
   text-align: center;
 `
+
 export const Infos = styled.div`
-  border-right: 1px solid ${cores.rosa};
-  border-bottom: 1px solid ${cores.rosa};
-  border-left: 1px solid ${cores.rosa};
+  border-right: 1px solid ${colors.pink};
+  border-bottom: 1px solid ${colors.pink};
+  border-left: 1px solid ${colors.pink};
   width: 100%;
 `
 
-export const InfoPrincipal = styled.ul`
+export const MainInfo = styled.ul`
   display: flex;
   margin-bottom: 16px;
   align-items: center;
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   margin-top: 8px;
   font-size: 18px;
   font-weight: 700;
   margin-left: 7px;
 `
 
-export const Nota = styled.span`
+export const Rating = styled.span`
   margin-top: 8px;
   position: absolute;
   right: 37px;
@@ -65,13 +67,13 @@ export const Nota = styled.span`
   font-weight: 700;
 `
 
-export const Estrela = styled.img`
+export const Star = styled.img`
   margin-top: 8px;
   position: absolute;
   right: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   display: block;
   font-size: 14px;
   font-weight: 400;
@@ -82,8 +84,8 @@ export const Descricao = styled.p`
 
 export const Button = styled.button`
   padding: 4px 6px;
-  background-color: ${cores.rosa};
-  color: ${cores.beje};
+  background-color: ${colors.pink};
+  color: ${colors.beige};
   font-size: 14px;
   font-weight: 700;
   border: none;

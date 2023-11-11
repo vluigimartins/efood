@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   padding: 8px;
   position: relative;
   margin-bottom: 40px;
@@ -12,14 +12,14 @@ export const Card = styled.div`
   }
 `
 
-export const Imagem = styled.img`
+export const Image = styled.img`
   max-width: 100%;
   width: 304px;
   height: 167px;
 `
 
-export const Titulo = styled.h3`
-  color: ${cores.beje};
+export const Title = styled.h3`
+  color: ${colors.beige};
   margin-top: 8px;
   font-size: 16px;
   font-weight: 900;
@@ -27,8 +27,8 @@ export const Titulo = styled.h3`
   margin-bottom: 8px;
 `
 
-export const Descricao = styled.p`
-  color: ${cores.beje};
+export const Description = styled.p`
+  color: ${colors.beige};
   font-size: 14px;
   line-height: 22px;
   display: block;
@@ -37,8 +37,8 @@ export const Descricao = styled.p`
 
 export const Button = styled.button`
   width: 100%;
-  color: ${cores.rosa};
-  background-color: ${cores.beje};
+  color: ${colors.pink};
+  background-color: ${colors.beige};
   padding: 4px;
   font-size: 14px;
   font-weight: 700;
@@ -74,12 +74,12 @@ export const ModalContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   width: 1024px;
   height: 344px;
   position: relative;
   z-index: 1;
-  color: ${cores.branco};
+  color: ${colors.white};
 
   > img {
     margin: 32px 24px 32px 32px;
@@ -114,8 +114,8 @@ export const ModalContent = styled.div`
 `
 
 export const Button2 = styled.button`
-  color: ${cores.rosa};
-  background-color: ${cores.beje};
+  color: ${colors.pink};
+  background-color: ${colors.beige};
   margin-top: 16px;
   padding: 4px 7px;
   font-size: 14px;

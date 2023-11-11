@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const FooterSection = styled.div`
-  background-color: ${cores.beje};
+  background-color: ${colors.beige};
   padding: 40px;
   text-align: center;
   display: block;
 `
-export const RedeSocial = styled.ul`
+export const Social = styled.ul`
   margin-top: 32.5px;
   display: flex;
   align-items: center;
@@ -19,13 +19,4 @@ export const RedeSocial = styled.ul`
 export const LogoFace = styled.li`
   margin-left: 8px;
   margin-right: 8px;
-`
-
-export const TextoRodape = styled.p`
-  color: ${cores.rosa};
-  font-family: Roboto;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 `

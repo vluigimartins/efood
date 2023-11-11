@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
+
 import ProductsList from '../../components/ProductsList'
 import Header from '../../components/Header'
 
-export type Restaurantes = {
+export type Restaurants = {
   id: number
   destacado: boolean
   tipo: string
@@ -13,7 +14,7 @@ export type Restaurantes = {
 }
 
 const Home = () => {
-  const [restaurantes, setRestaurantes] = useState<Restaurantes[]>([])
+  const [restaurants, setRestaurantes] = useState<Restaurants[]>([])
 
   useEffect(() => {
     fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <ProductsList restaurantes={restaurantes} />
+      <ProductsList restaurants={restaurants} />
     </>
   )
 }

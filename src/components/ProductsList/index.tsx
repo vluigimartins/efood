@@ -1,25 +1,27 @@
-import { Restaurantes } from '../../pages/Home'
-import Product from '../Product'
 import { Container, List } from './styles'
 
+import { Restaurants } from '../../pages/Home'
+
+import Product from '../Product'
+
 export type Props = {
-  restaurantes: Restaurantes[]
+  restaurants: Restaurants[]
 }
 
-const ProductsList = ({ restaurantes }: Props) => (
+const ProductsList = ({ restaurants }: Props) => (
   <div className="container">
     <Container>
       <List>
-        {restaurantes.map((restaurante) => (
+        {restaurants.map((restaurants) => (
           <Product
-            key={restaurante.id}
-            titulo={restaurante.titulo}
-            nota={restaurante.avaliacao}
-            destaque={restaurante.destacado}
-            origem={restaurante.tipo}
-            imagem={restaurante.capa}
-            descricao={restaurante.descricao}
-            id={restaurante.id}
+            key={restaurants.id}
+            title={restaurants.titulo}
+            rating={restaurants.avaliacao}
+            highlight={restaurants.destacado}
+            origin={restaurants.tipo}
+            image={restaurants.capa}
+            description={restaurants.descricao}
+            id={restaurants.id}
           />
         ))}
       </List>

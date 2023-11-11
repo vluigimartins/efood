@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -26,13 +26,13 @@ export const CartContainer = styled.div`
 `
 
 export const SideBar = styled.aside`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   z-index: 1;
   padding-top: 32px;
   width: 360px;
 `
 export const CartCard = styled.div`
-  background-color: ${cores.beje};
+  background-color: ${colors.beige};
   margin: 0 8px 16px 8px;
   display: flex;
   align-items: center;
@@ -64,14 +64,14 @@ export const Image = styled.img`
   margin: 8px 8px 12px 8px;
 `
 
-export const Lixeira = styled.img`
+export const Recycle = styled.img`
   margin-top: 76px;
   margin-right: 8px;
   cursor: pointer;
 `
 
-export const ValorTotal = styled.p`
-  color: ${cores.beje};
+export const CurrentValue = styled.p`
+  color: ${colors.beige};
   font-size: 14px;
   font-weight: 700;
   display: flex;
@@ -81,8 +81,8 @@ export const ValorTotal = styled.p`
 export const Button = styled.button`
   margin: 0 8px;
   padding: 4px 95px 4px 93px;
-  background-color: ${cores.beje};
-  color: ${cores.rosa};
+  background-color: ${colors.beige};
+  color: ${colors.pink};
   font-size: 14px;
   font-weight: 700;
   border: none;
