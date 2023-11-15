@@ -5,6 +5,11 @@ export const Card = styled.div`
   background-color: ${colors.white};
   position: relative;
   margin-bottom: 48px;
+
+  @media (max-width: 768px) and (min-width: 475px) {
+    width: 60%;
+    transform: translateX(33%);
+  }
 `
 
 export const Image = styled.img`

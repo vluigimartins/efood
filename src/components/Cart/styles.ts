@@ -78,6 +78,7 @@ export const CurrentValue = styled.p`
   justify-content: space-between;
   margin: 24px 8px 16px 8px;
 `
+
 export const Button = styled.button`
   margin: 0 8px;
   padding: 4px 95px 4px 93px;

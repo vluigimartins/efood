@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 import vector from '../../assets/images/Vector_Perfil.png'
@@ -26,6 +27,10 @@ const HeaderProfile = () => {
         <S.Cart onClick={openCart}>
           {items.length} produto(s) no carrinho
         </S.Cart>
+        <S.CartMobile onClick={openCart}>
+          {items.length}
+          <AiOutlineShoppingCart size={40} />
+        </S.CartMobile>
       </S.Container>
     </>
   )

@@ -5,6 +5,10 @@ export const Hero = styled.header`
 `
 export const Vetor = styled.img`
   width: 100%;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 `
 export const Container = styled.div`
   position: absolute;
@@ -22,4 +26,13 @@ export const Title = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    margin-top: 40px;
+    font-size: 28px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `

@@ -9,4 +9,8 @@ export const List = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `

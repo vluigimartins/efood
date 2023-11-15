@@ -18,13 +18,22 @@ export const BannerTitle = styled.h2`
   color: ${colors.white};
   font-size: 32px;
   font-weight: 100;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    margin-left: 50px;
+  }
 `
 
 export const ProfileTitle = styled.h2`
   position: absolute;
-
   top: 399.75px;
   color: ${colors.white};
   font-size: 32px;
   font-weight: 900;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    margin-left: 50px;
+  }
 `

@@ -60,7 +60,7 @@ const ProductProfile = ({
         <S.ModalContent className="container">
           <img src={foto} alt={nome} />
           <div className="details">
-            <img
+            <S.CloseImg
               src={close}
               alt="botão fechar"
               onClick={() => setmodalIsOpen(false)}

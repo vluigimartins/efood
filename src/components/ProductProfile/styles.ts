@@ -9,6 +9,12 @@ export const Card = styled.div`
 
   img {
     opacity: 1;
+    width: 1000%;
+  }
+
+  @media (max-width: 768px) and (min-width: 475px) {
+    width: 60%;
+    transform: translateX(33%);
   }
 `
 
@@ -33,6 +39,10 @@ export const Description = styled.p`
   line-height: 22px;
   display: block;
   height: 180px;
+
+  @media (max-width: 768px) {
+    height: 130px;
+  }
 `
 
 export const Button = styled.button`
@@ -46,6 +56,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
 `
+
 export const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -104,12 +115,44 @@ export const ModalContent = styled.div`
       margin-right: 32px;
       height: 175px;
     }
+  }
 
-    img {
-      margin-left: 664px;
-      margin-top: 8px;
-      cursor: pointer;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    height: 75%;
+    overflow-x: hidden;
+
+    p {
+      margin-left: 100px;
+      max-width: 65%;
+      margin-bottom: 15px;
     }
+  }
+
+  @media (max-width: 475px) {
+    height: 98%;
+    width: 90%;
+
+    p {
+      max-width: 100%;
+      margin-bottom: 50px;
+      font-size: 12px;
+      margin-left: 32px;
+    }
+  }
+`
+
+export const CloseImg = styled.img`
+  margin-left: 664px;
+  margin-top: 8px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 8px;
   }
 `
 
