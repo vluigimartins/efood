@@ -1,20 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  close,
-  setShowDelivery,
-  setShowPayment
-} from '../../store/reducers/cart'
-import { OrderContainer } from './styles'
-import { Container, Button, Inputs } from '../Delivery/styles'
+
+import { useFormik } from 'formik'
+
+import * as S from './styles'
+
 import { RootReducer } from '../../store'
+import { changeSection, close } from '../../store/reducers/cart'
+
+import Delivery from '../Delivery'
+import { Container, Button, Inputs, InputsNum } from '../Delivery/styles'
+import { FormatPrice } from '../ProductProfile'
 
 const Payment = () => {
-  const { isOpen, showDelivery } = useSelector(
+  const { items, currentSection } = useSelector(
     (state: RootReducer) => state.cart
   )
   const [done, setDone] = useState(false)
   const dispatch = useDispatch()
+
+  const form = useFormik({
+    initialValues: {
+      name: '',
+      cardNumber: '',
+      cvv: '',
+      month: '',
+      year: ''
+    },
+    onSubmit: (values) => {
+      console.log(values)
+    }
+  })
+
+  useEffect(() => {
+    // Remova a lógica de mudança de seção do useEffect
+  }, [currentSection, dispatch])
 
   const closeCart = () => {
     dispatch(close())
@@ -24,14 +44,20 @@ const Payment = () => {
     setDone(!done)
   }
 
-  const handleReturnToDelivery = () => {
-    dispatch(setShowDelivery(true))
-    dispatch(setShowPayment(false))
+  const handleContinueToDelivery = () => {
+    dispatch(changeSection('delivery'))
   }
+
+  const getTotalPrice = () => {
+    return items.reduce((accumulator, currentValue) => {
+      return (accumulator += currentValue.preco!)
+    }, 0)
+  }
+
   return (
-    <Container>
+    <Container onSubmit={form.handleSubmit}>
       {done ? (
-        <OrderContainer>
+        <S.OrderContainer>
           <h2>Pedido realizado - ORDER_ID</h2>
           <p>
             Estamos felizes em informar que seu pedido já está em processo de
@@ -51,37 +77,81 @@ const Payment = () => {
             gastronômica. Bom apetite!
           </p>
           <Button onClick={closeCart}>Concluir</Button>
-        </OrderContainer>
+        </S.OrderContainer>
       ) : (
-        <>
-          <h2>Pagamento - Valor a pagar R$ 190,00</h2>
+        <S.PaymentContainer>
+          <h2>Pagamento - Valor a pagar {FormatPrice(getTotalPrice())}</h2>
           <Inputs>
-            <label htmlFor="nome">Nome no cartão</label>
-            <input type="text" />
+            <label htmlFor="name">Nome no cartão</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={form.values.name}
+              onChange={form.handleChange}
+              onBlur={form.handleBlur}
+            />
           </Inputs>
-          <Inputs>
-            <label htmlFor="cartao">Número do cartão</label>
-            <input type="text" />
-            <label htmlFor="cvv">CVV</label>
-            <input type="number" />
-          </Inputs>
-          <Inputs>
-            <div>
-              <label htmlFor="mes">Mês de vencimento</label>
-              <input type="text" />
-              <label htmlFor="ano">Ano de vencimento</label>
-              <input type="number" />
+          <S.InputsCard>
+            <div className="row-number">
+              <div>
+                <label htmlFor="cardNumber">Número do cartão</label>
+                <S.InputsCardName
+                  type="text"
+                  id="cardNumber"
+                  name="cardNumber"
+                  value={form.values.cardNumber}
+                  onChange={form.handleChange}
+                  onBlur={form.handleBlur}
+                />
+              </div>
+              <div>
+                <label htmlFor="cvv">CVV</label>
+                <S.InputsCardCVV
+                  type="number"
+                  id="cvv"
+                  name="cvv"
+                  value={form.values.cvv}
+                  onChange={form.handleChange}
+                  onBlur={form.handleBlur}
+                />
+              </div>
             </div>
-          </Inputs>
-          <div className="dadosEntrega">
+          </S.InputsCard>
+          <InputsNum>
+            <div className="row-number">
+              <div>
+                <label htmlFor="month">Mês de vencimento</label>
+                <input
+                  type="text"
+                  id="month"
+                  name="month"
+                  value={form.values.month}
+                  onChange={form.handleChange}
+                  onBlur={form.handleBlur}
+                />
+              </div>
+              <div>
+                <label htmlFor="year">Ano de vencimento</label>
+                <input
+                  type="number"
+                  id="year"
+                  name="year"
+                  value={form.values.year}
+                  onChange={form.handleChange}
+                  onBlur={form.handleBlur}
+                />
+              </div>
+            </div>
+          </InputsNum>
+          <div className="container-button">
             <Button onClick={isRealized}>Finalizar pagamento</Button>
-            {showDelivery && (
-              <Button onClick={handleReturnToDelivery}>
-                Voltar para a entrega
-              </Button>
-            )}
+            <Button onClick={handleContinueToDelivery}>
+              Voltar para a edição de endereço
+            </Button>
+            {currentSection === 'delivery' && <Delivery />}
           </div>
-        </>
+        </S.PaymentContainer>
       )}
     </Container>
   )

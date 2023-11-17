@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 
 const HeaderProfile = () => {
-  const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
+  const dispatch = useDispatch()
 
   const openCart = () => {
     dispatch(open())

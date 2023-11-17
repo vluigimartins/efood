@@ -1,15 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.8;
-`
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
@@ -25,12 +16,23 @@ export const CartContainer = styled.div`
   }
 `
 
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+`
+
 export const SideBar = styled.aside`
   background-color: ${colors.pink};
   z-index: 1;
   padding-top: 32px;
   width: 360px;
 `
+
 export const CartCard = styled.div`
   background-color: ${colors.beige};
   margin: 0 8px 16px 8px;

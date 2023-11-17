@@ -5,15 +5,15 @@ import { Order } from '../../pages/Profile'
 type CartState = {
   items: Order[]
   isOpen: boolean
-  showDelivery: boolean
-  showPayment: boolean
+  currentSection: string
+  isCartVisible: boolean
 }
 
 const initialState: CartState = {
   items: [],
   isOpen: false,
-  showDelivery: false,
-  showPayment: false
+  currentSection: 'cart',
+  isCartVisible: true
 }
 
 const cartSlice = createSlice({
@@ -37,20 +37,16 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
-      state.showDelivery = false
-      state.showPayment = false
     },
-    setShowDelivery: (state, action: PayloadAction<boolean>) => {
-      state.showDelivery = action.payload
-      state.showPayment = false
+    changeSection: (state, action: PayloadAction<string>) => {
+      state.currentSection = action.payload
     },
-    setShowPayment: (state, action: PayloadAction<boolean>) => {
-      state.showPayment = action.payload
-      state.showDelivery = false
+    setCartVisibility: (state, action: PayloadAction<boolean>) => {
+      state.isCartVisible = action.payload
     }
   }
 })
 
-export const { add, remove, open, close, setShowDelivery, setShowPayment } =
+export const { add, remove, open, close, changeSection, setCartVisibility } =
   cartSlice.actions
 export default cartSlice.reducer
