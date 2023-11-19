@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 
-import * as S from './styles'
-
 import close from '../../assets/images/close.png'
 import { add, open } from '../../store/reducers/cart'
+
+import * as S from './styles'
 
 type Props = {
   nome: string
@@ -49,10 +49,12 @@ const ProductProfile = ({
     <>
       <S.Card>
         <S.Image src={foto} alt={nome} />
-
         <S.Title>{nome}</S.Title>
         <S.Description>{descricao}</S.Description>
-        <S.Button onClick={() => setmodalIsOpen(true)}>
+        <S.Button
+          onClick={() => setmodalIsOpen(true)}
+          title="Clique aqui para ver mais informações sobre o prato"
+        >
           Adicionar ao carrinho
         </S.Button>
       </S.Card>

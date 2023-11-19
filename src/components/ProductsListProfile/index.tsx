@@ -1,8 +1,7 @@
-import { Container, List } from './styles'
-
 import Product_Perfil from '../ProductProfile'
-
 import { Order } from '../../pages/Profile'
+
+import { Container, List } from './styles'
 
 export type Props = {
   orders: Order[]

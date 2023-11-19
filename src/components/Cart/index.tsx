@@ -28,7 +28,10 @@ const Cart = () => {
 
   const getTotalPrice = () => {
     return items.reduce((accumulator, currentValue) => {
-      return (accumulator += currentValue.preco!)
+      if (currentValue.preco) {
+        return (accumulator += currentValue.preco)
+      }
+      return 0
     }, 0)
   }
 
@@ -37,8 +40,12 @@ const Cart = () => {
   }
 
   const handleContinueToDelivery = () => {
-    dispatch(changeSection('delivery'))
-    dispatch(setCartVisibility(false))
+    if (items.length === 0) {
+      return 0
+    } else {
+      dispatch(changeSection('delivery'))
+      dispatch(setCartVisibility(false))
+    }
   }
 
   return (
@@ -61,7 +68,6 @@ const Cart = () => {
               <p>Valor total</p>
               <p>{FormatPrice(getTotalPrice())}</p>
             </S.CurrentValue>
-
             <S.Button onClick={handleContinueToDelivery}>
               Continuar com a entrega
             </S.Button>

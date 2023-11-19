@@ -33,6 +33,10 @@ export const Inputs = styled.div`
     width: 100%;
     font-size: 14px;
     font-weight: 700;
+
+    &.error {
+      border: 1px sold red;
+    }
   }
 `
 

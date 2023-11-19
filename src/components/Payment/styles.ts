@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const OrderContainer = styled.div`
+export const Container = styled.div`
+  color: ${colors.beige};
+  margin-left: 8px;
+  margin-right: 8px;
+`
+
+export const OrderContainer = styled.form`
   h2 {
     font-size: 16px;
     font-weight: 700;
@@ -19,6 +25,16 @@ export const PaymentContainer = styled.div`
   .row-number {
     display: flex;
     justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .container-button {
+    margin-top: 24px;
   }
 `
 
@@ -38,6 +54,10 @@ export const InputsCard = styled.div`
     font-weight: 700;
     padding: 0 8px;
     height: 32px;
+
+    &.error {
+      border: 1px sold red;
+    }
   }
 `
 

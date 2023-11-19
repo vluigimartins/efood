@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import * as S from './styles'
-
 import logo from '../../assets/images/logo.svg'
 import vector from '../../assets/images/Vector_Home.png'
+
+import * as S from './styles'
 
 const Header = () => (
   <S.Hero>

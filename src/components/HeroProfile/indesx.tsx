@@ -1,7 +1,9 @@
-import * as S from './styles'
-import { Restaurants } from '../../pages/Home'
-import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { Restaurants } from '../../pages/Home'
+
+import * as S from './styles'
 
 const HeroPerfil = () => {
   const { id } = useParams()

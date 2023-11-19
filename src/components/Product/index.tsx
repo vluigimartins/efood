@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import * as S from './styles'
 import star from '../../assets/images/estrela.svg'
+
+import * as S from './styles'
 
 type Props = {
   id: number
@@ -33,7 +34,10 @@ const Product = ({
           <S.Star src={star} />
         </S.MainInfo>
         <S.Description>{description}</S.Description>
-        <Link to={`/perfil/${id}`}>
+        <Link
+          title="Clique aqui para acessar o perfil do restaurante"
+          to={`/perfil/${id}`}
+        >
           <S.Button>Saiba mais</S.Button>
         </Link>
       </S.Infos>

@@ -72,7 +72,7 @@ export const Recycle = styled.img`
   cursor: pointer;
 `
 
-export const CurrentValue = styled.p`
+export const CurrentValue = styled.span`
   color: ${colors.beige};
   font-size: 14px;
   font-weight: 700;
